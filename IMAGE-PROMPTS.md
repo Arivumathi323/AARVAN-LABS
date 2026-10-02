@@ -19,3 +19,17 @@ Use case: stylized-concept. Asset type: premium website card illustration for Aa
 | `assets/images/services/web-development.png` | floating browser-like smoked glass panels with abstract code-like lines and geometric blocks, without letters or readable text |
 | `assets/images/services/product-building.png` | a precision machined modular prototype cube on a minimal dark engineering workbench, with refined silver components and orange detail |
 | `assets/images/services/freelance.png` | a premium dark laptop workspace with a stylus and open sketchbook containing abstract geometric sketches, no readable text |
+
+## Social card — 3 October 2026
+
+Saved as `assets/images/og-image.jpg`, generated with the built-in image tool and encoded as JPEG without composition changes.
+
+Use case: ads-marketing
+Asset type: landscape Open Graph social preview card for Aarvan Labs, approximately 1200 by 630 pixels (1.90:1 aspect ratio).
+Primary request: Create one original, cohesive, polished branded card for a premium AI and technology studio.
+Scene/backdrop: near-black flat background #0A0A0A, with restrained thin orange #FF6B00 PCB circuit traces and small junction nodes along the outer edges, framing generous clear space.
+Style/medium: sophisticated graphic design, crisp editorial typography, beautifully balanced spacing, minimal high-end technology brand aesthetic.
+Composition/framing: landscape rectangular card, generous safe margins, strongly legible typography at thumbnail size. Brand name above the large main headline and the smaller supporting line beneath. Subtle circuit accents do not compete with the words.
+Color palette: #0A0A0A background; warm white main typography; orange #FF6B00 accent details.
+Text (verbatim, exactly these three lines and no other wording): "AARVAN LABS", "Ideas. Build. Impact.", "AI & Technology · Chennai".
+Constraints: spell AARVAN as A A R V A N, all uppercase in the brand name. Preserve the periods and middle dot exactly. Premium clean sans-serif typography with confident hierarchy. No watermark, no extra logos, no photos, no device mockup, no additional words.

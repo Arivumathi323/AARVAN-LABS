@@ -1,6 +1,6 @@
 # Aarvan Labs
 
-A complete responsive static website using semantic HTML, seven stylesheets, and four JavaScript files. No framework or installation is required.
+A complete responsive static website using semantic HTML, eight stylesheets, and five JavaScript files. No framework or installation is required.
 
 ## Preview
 
@@ -39,3 +39,15 @@ Includes labeled controls, inline validation, keyboard focus states, skip naviga
 `index.html`, `css/{main,hero,about,services,projects,contact,responsive}.css`, `js/{main,animations,mascot,contact}.js`, and `assets/` form the website. `preview.mjs` is a development-only static server. `build.mjs` copies the public files into `dist/` for static hosting.
 
 Google Fonts supplies Space Grotesk and Inter; GSAP and ScrollTrigger load from cdnjs. The browser needs internet access for those optional resources.
+
+## Added motion and search metadata
+
+`css/enhancements.css` and `js/enhancements.js` add section reveals, staggered cards, counters, SVG circuit pulses, a scroll progress line, hero particles, and mascot interaction without changing the original animation, navigation, mascot, or contact scripts. The hero uses 50 particles on desktop and at most 20 on mobile/coarse-pointer devices. Canvas resolution is capped at 1.5 DPR; animation stops while the tab is hidden or the hero is offscreen. Transforms and opacity drive the reveals; temporary `will-change` hints are removed after transitions.
+
+The existing Pause motion button and system reduced-motion preference also stop the added effects. Counters keep readable final values when motion is disabled or GSAP is unavailable. The mascot tilt is applied to a wrapper so it can coexist with the original floating image animation. Mobile uses idle sway and no cursor-driven tilt.
+
+The hero video displays a subtle orange loading dot until playback. Media/source errors, rejected playback and a ten-second loading timeout activate the dark gradient fallback. No JavaScript leaves the gradient underneath the video as a static fallback.
+
+`about.html` contains a third-person company profile. The homepage includes the requested FAQ, Organization and FAQPage JSON-LD, primary metadata, canonical URL, Open Graph and Twitter metadata. `sitemap.xml` lists both pages; `robots.txt` allows crawling. Canonical, schema and social image URLs use the supplied `https://aarvanlabs.vercel.app` domain. Deploy this source there for those absolute URLs to resolve; publishing a private Sites preview does not deploy to Vercel or make it indexable. Metadata and FAQ do not guarantee search ranking or answer-engine citations.
+
+`assets/images/og-image.jpg` is the generated social preview card. Build and preview scripts include the new page and crawl files. Run `node check.mjs` for existing source and form checks, and `node check-enhancements.mjs` for added metadata and runtime-state checks.

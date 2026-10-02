@@ -8,7 +8,7 @@ const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 assert.equal(ids.length, new Set(ids).size, 'IDs must be unique');
 for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(id), `Anchor ${id} must exist`);
 assert(!/<style\b|\sstyle=|\son(?:click|load|error)=/i.test(html), 'Keep styles and handlers external');
-assert.equal([...html.matchAll(/<link rel="stylesheet"/g)].length, 7);
+assert.equal([...html.matchAll(/<link rel="stylesheet"/g)].length, 8);
 const expectedMissing = new Set(['assets/images/mascot.png']);
 for (const [, ref] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
   if (/^(https?:|#)/.test(ref)) continue;
@@ -48,5 +48,5 @@ assert.equal(form.elements.message.value, 'A website enquiry.');
 form.elements.message.value = '   ';
 submit();
 assert.equal(form.elements.message.attributes['aria-invalid'], 'true');
-console.log('PASS: section links, unique IDs, seven CSS files, local assets, and contact validation (empty, invalid, valid, whitespace).');
+console.log('PASS: section links, unique IDs, eight CSS files, local assets, and contact validation (empty, invalid, valid, whitespace).');
 console.log('Only optional missing media: mascot; the supplied logo is its fallback.');
