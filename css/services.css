@@ -1,0 +1,12 @@
+.services { background: var(--bg2); }
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.service-card { --card-padding: 32px; padding: var(--card-padding); background: var(--card); border: 1px solid #29221c; border-left: 3px solid var(--orange); overflow: hidden; transition: border-color .3s; }
+.service-card:hover { border-color: #704224; border-left-color: var(--orange); }
+.service-image { margin: calc(-1 * var(--card-padding)) calc(-1 * var(--card-padding)) 28px; aspect-ratio: 2.1; overflow: hidden; background: #0a0a0a; border-bottom: 1px solid #30251d; }
+.service-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .65s ease, filter .65s ease; }
+.service-card:hover .service-image img { transform: scale(1.035); filter: brightness(1.08); }
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.card-top svg { width: 24px; height: 24px; stroke: var(--orange); stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.card-top span { font-family: var(--font-heading); font-size: .75rem; color: #777; }
+.service-card h3 { font-size: 1.5rem; letter-spacing: -.035em; margin-bottom: 14px; }
+.service-card p { color: var(--gray); max-width: 440px; line-height: 1.8; }

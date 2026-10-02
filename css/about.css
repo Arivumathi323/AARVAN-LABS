@@ -1,0 +1,8 @@
+.about { border-top: 1px solid #25211d; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; align-items: center; }
+.about-copy { color: rgb(255 255 255 / 70%); font-size: 1.0625rem; line-height: 1.95; }
+.about-copy strong { display: block; color: #fff; font-weight: 500; margin-top: 18px; }
+.founder { margin-top: 30px; font-family: var(--font-heading); font-size: .8125rem; letter-spacing: .06em; }
+.founder span { color: var(--gray); margin-left: 10px; letter-spacing: 0; }
+.values { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; list-style: none; }
+.values li { background: #111; border: 1.5px solid var(--orange); color: var(--orange); border-radius: 50px; padding: 12px 28px; text-align: center; font-family: var(--font-heading); font-weight: 700; letter-spacing: .06em; }
