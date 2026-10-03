@@ -1,8 +1,8 @@
 ﻿export const company = {
- name: 'Aarvan Labs', founder: 'Arivumathi S', description: 'Aarvan Labs is a Chennai-based AI and automation studio founded by Arivumathi S, operating under Aarvan Technology.',
- socials: ['https://arivumathi.in','https://github.com/Arivumathi323','https://www.linkedin.com/in/arivumathi-s-aarvan-labs/','https://youtube.com/@aarvan_labs','https://www.instagram.com/learn_with_aarvan'],
+ name: 'Aarvan Labs', phone: '+918122167396', phoneDisplay: '+91 8122167396', founder: 'Arivumathi S', description: 'Aarvan Labs is a Chennai-based AI and automation studio founded by Arivumathi S, operating under Aarvan Technology.',
+ socials: ['https://www.arivumathi.in/','https://github.com/Arivumathi323','https://www.linkedin.com/in/arivumathi-s-aarvan-labs/','https://youtube.com/@aarvan_labs','https://www.instagram.com/learn_with_aarvan'],
  timeline: [{year:'TODO: Year',milestone:'Started coding on a mobile phone'},{year:'TODO: Year',milestone:'Began B.E. Computer Science studies in Chennai'},{year:'TODO: Year',milestone:'Founded Aarvan Labs'}],
- photo: '/images/arivu.jpg', // TODO: Add founder photo at this path.
+ photo: '/images/arivu.webp',
  testimonials: [], // Only add testimonials supplied by real customers with permission.
 };
 const service = (slug,name,h1,intro,audience,deliverables,cases,tools,project,learn,faqs) => ({slug,name,h1,intro,audience,deliverables,cases,tools,project,learn,faqs,prices:[{name:'Focused build',price:null},{name:'Connected system',price:null}],timeline:['Discover: 1–3 working days to map the workflow','Design: 2–5 working days to agree the scope','Build: typically 1–4 weeks, depending on integrations','Support: handover and support period agreed in your proposal']}); // TODO: Set service prices and confirm indicative timelines.
@@ -36,3 +36,75 @@ export const why = ['Real product experience with THOZHAN, NOVA and VISION OS','
 
 const outcomes = ['Turn website visits into useful business enquiries','Move data between your tools without repetitive copying','Give your team an assistant grounded in business knowledge','Plan reliable AI systems with clear responsibilities','Keep leads and operational handoffs moving','Handle customer enquiries and hand over to your team','Answer calls and capture appointment requests'];
 services.forEach((s,i)=>s.summary=outcomes[i]);
+// Search intent is expressed in visible copy, not hidden keyword lists.
+export const searchContent = {
+ 'website-development': {
+  title:'Website Development Company in Chennai',
+  description:'Website development company in Chennai for clinics, coaching centres and startups. Get business website design and discuss your project.',
+  sections:[['Business website design in Chennai','Build a website for clinics, coaching centres or startups with clear service information, accessible enquiry forms and mobile-friendly layouts. Each page should help visitors understand what you offer and take the next step.'],['Looking for a Next.js developer in India?','Aarvan Labs can scope a Next.js website when your project needs dynamic features or integrations. For simpler business sites, we can use static pages that are easy to host and maintain.']]
+ },
+ 'n8n-automation': {
+  title:'n8n Automation Expert in Chennai',
+  description:'Work with an n8n automation expert in Chennai. Connect business tools, automate routine work and hire an n8n developer for your workflow.',
+  sections:[['Hire an n8n developer for your workflow','If you need an n8n workflow developer in India, start with the tools you use, the data you move and the exceptions your team handles. We scope the integrations, testing and maintenance before building.'],['n8n for small business','Start with one useful workflow: capture a lead, validate the details, update your CRM and notify the responsible person. Expand once the workflow is reliable and someone owns its upkeep.']],
+  faqs:[['n8n vs Zapier: which is better for Indian small businesses?','The better fit depends on your integrations, workflow complexity, budget and maintenance capacity. Compare the actual workflow in both tools, including hosting, usage charges and who will resolve failures. Aarvan Labs can help assess those requirements before choosing.']]
+ },
+ 'ai-agent-development': {
+  title:'AI Agent Development Services',
+  description:'AI agent development services for business workflows and support. Build a custom AI agent with approved tools and human handover. Book a call.',
+  sections:[['A custom AI agent for your business','Connect business knowledge and approved actions to a defined task, such as answering admissions questions or preparing a lead summary. We agree where the agent can act and when it must ask a person.'],['Hire an AI agent developer','For AI chatbot development in India, bring sample questions, approved documents and the systems you want to connect. Aarvan Labs uses these to scope the agent, evaluate its answers and plan human handover.']]
+ },
+ 'agentic-ai-system-design': {
+  title:'Agentic AI System Design',
+  description:'Agentic AI system design, multi-agent system consulting and AI agent architecture. Scope tools, permissions and evaluations with Aarvan Labs.',
+  sections:[['AI agent architecture and multi-agent system consulting','Map each responsibility, shared data source and handoff before adding agents. We review whether separate agents improve the workflow and how their outputs will be checked.'],['MCP server development and integration planning','Define which business tools and data an MCP server should expose, who can access them and which operations need approval. Development scope follows a review of your APIs and security requirements.']]
+ },
+ 'business-automation': {
+  h1:'Business Process Automation India',title:'Business Process Automation India',
+  description:'Business process automation in India for SMEs. Automate lead follow-up, connect your CRM and reduce repetitive work. Discuss your workflow.',
+  sections:[['Automate lead follow-up','Route new enquiries to an owner, create follow-up tasks and flag overdue responses. Keep approvals and exceptions visible so automation supports your sales process.'],['CRM automation for small business','Connect enquiry forms, spreadsheets and CRM records to reduce duplicate entry. Our workflow automation for SMEs starts with clear rules for record matching, updates and failed integrations.']]
+ },
+ 'whatsapp-automation': {
+  title:'WhatsApp Automation for Business',
+  description:'WhatsApp automation for business: chatbot flows, API setup in Chennai and appointment requests. Plan a customer enquiry workflow with Aarvan Labs.',
+  sections:[['WhatsApp Business API setup in Chennai','We help scope account setup, incoming-message handling and business integrations. A WhatsApp chatbot for customers in India should use clear language and make it easy to reach a person.'],['WhatsApp appointment booking bot','Guide a customer from an enquiry to an appointment request, check availability through a suitable integration and route exceptions to your team. Clinics and coaching centres can start with one booking flow.']],
+  faqs:[['How do I automate WhatsApp for my business?','Choose a specific workflow, review your WhatsApp Business API setup, then connect incoming messages to your CRM or booking tool. Add consent, opt-out handling and a route to a person, and test the flow before launch.']]
+ },
+ 'ai-receptionist': {
+  title:'AI Receptionist for Business',
+  description:'AI receptionist for business enquiries and appointment requests. Explore Tamil voice AI and an AI call assistant for clinics. Book a call.',
+  sections:[['A voice AI receptionist for your front desk','An AI phone answering service in India can handle agreed questions, collect caller details and pass a summary to staff. A useful first scope is an AI call assistant for clinics that captures appointment requests and escalates questions needing a person.'],['Tamil voice AI','Tamil and English calling flows need testing with your business vocabulary and realistic caller scenarios. Language quality, transfers and fallback behavior are reviewed with the selected voice provider.']],
+  faqs:[['What is an AI receptionist and how much does it cost in India?','An AI receptionist answers calls and carries out agreed front-desk tasks, such as capturing enquiries or appointment requests. Cost depends on call volume, languages, integrations and support, with telephony and AI usage charges scoped separately. Aarvan Labs provides a quote after discovery; published prices are awaiting confirmation.']]
+ },
+ 'ai-automation-course': {
+  h1:'AI Automation Course in Chennai',title:'AI Automation Course in Chennai',
+  description:'AI automation course in Chennai: learn n8n automation and build AI agents through practical projects. Explore beginner learning and book a session.',
+  sections:[['Learn n8n automation from the basics','This n8n course for beginners starts with triggers, data and simple workflow steps before introducing APIs and AI. Build a small project, inspect each step and learn how to recover from errors.'],['An AI agents course for learners in India','Move from a basic workflow to an assistant that uses approved information and tools. Practice testing answers and deciding which actions need human review.']],
+  faqs:[['How do I learn AI automation from scratch?','Start with a repetitive task you understand. Learn triggers, data and APIs, then build a simple n8n workflow. Add an AI model only where it helps, test with realistic examples and keep a person responsible for exceptions. Learn with Aarvan guides you through this process.']]
+ },
+ 'whatsapp-automation-course': {
+  h1:'WhatsApp Automation Course',title:'WhatsApp Automation Course',
+  description:'WhatsApp automation course with practical chatbot flows and WhatsApp Business API training. Learn to build a business enquiry project with Aarvan.',
+  sections:[['Learn WhatsApp chatbot development','Plan the conversation, capture the right details and build a handover to staff. The project connects what customers ask to a useful business outcome.'],['WhatsApp Business API training','Work through account concepts, webhooks, message handling and integrations. Test an enquiry or booking flow, including consent, opt-outs and cases that need a person.']]
+ },
+ 'seo-aeo-for-business': {
+  h1:'SEO and AEO Training for Business',title:'SEO and AEO Training for Business',
+  description:'SEO and AEO training for business, with practical GEO training in Chennai. Audit your site and improve useful, accessible content. Book a session.',
+  sections:[['GEO training in Chennai','Our generative engine optimization course for businesses in India covers clear entity information, useful source material and an actionable website audit. Use the GEO Audit Engine to identify issues and prioritize changes.'],['How to rank in ChatGPT: what can you actually improve?','There is no fixed ChatGPT results position that a course can promise. Focus on accurate, accessible pages that answer specific questions, explain your services and identify your business consistently. Review whether relevant answers cite your sources over time.']],
+  faqs:[['What is AEO / GEO and how is it different from SEO?','SEO focuses on helping search engines discover and understand pages. AEO focuses on clearly answering questions, while GEO focuses on how content may be used or cited in generated answers. These practices overlap: useful content, crawlable pages and accurate information support all three.'],['How can a small business show up in ChatGPT answers?','Publish accessible pages explaining your services, location and real work. Keep your business name and contact information consistent, answer specific customer questions and support claims with evidence. These steps help make your business understandable, but inclusion or citation in ChatGPT answers is not guaranteed.']]
+ },
+ 'one-on-one-mentorship': {
+  h1:'One-on-One AI Automation Mentorship',title:'AI Mentor Chennai — 1:1 Automation Mentorship',
+  description:'Find an AI mentor in Chennai for one-on-one AI automation mentorship. Build practical AI skills for engineering students and founders. Book a session.',
+  sections:[['Learn AI automation as a student','Work on a manageable project alongside your studies. Build AI skills for engineering students through APIs, workflow design, debugging and practical evaluations, with guidance matched to your starting point.'],['Work with an AI mentor in Chennai','Arivumathi S, known as Arivu, teaches through Learn with Aarvan at Aarvan Labs. One-on-one AI automation mentorship gives students, founders and freelancers a place to review their project and understand the next step.']]
+ }
+};
+for(const entry of [...services,...learn]) {
+ const search=searchContent[entry.slug];
+ if(search.h1) entry.h1=search.h1;
+ entry.seoTitle=search.title;
+ entry.seoDescription=search.description;
+ entry.searchSections=search.sections;
+ if(search.faqs) entry.faqs.push(...search.faqs);
+}
+homeFaq.push(['Who is the best AI automation developer in Chennai?','The best fit depends on your workflow, integrations and support needs. Compare relevant project examples, communication, testing and handover rather than relying on a broad ranking claim. Aarvan Labs offers AI automation development in Chennai alongside hands-on teaching; discuss your use case to see whether we are a fit.']);

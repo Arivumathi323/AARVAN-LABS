@@ -3,6 +3,9 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import contact from './api/contact.js';
+// Load local email settings for both npm run dev and direct preview startup.
+try { process.loadEnvFile(fileURLToPath(new URL('./.env', import.meta.url))); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
 const root=fileURLToPath(new URL('./dist/',import.meta.url));
 const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.mp4':'video/mp4','.xml':'application/xml','.txt':'text/plain','.json':'application/json'};
 http.createServer(async(req,res)=>{

@@ -47,3 +47,5 @@ select {width:100%;background:#111;border:1px solid #444;border-radius:3px;paddi
 .hero-bottom { padding-right: 200px; }
 .mascot {border-radius:50%;}
 @media(max-width:768px){.hero-bottom{padding-right:0;bottom:85px}.hero{padding-bottom:155px}}
+.faq-list summary h3 { display: inline; font-size: inherit; line-height: inherit; letter-spacing: normal; }
+.founder-photo { width: 100%; max-width: 440px; height: auto; aspect-ratio: 1; border-radius: 4px; border: 1px solid #493321; justify-self: center; }

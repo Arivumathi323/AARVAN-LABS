@@ -31,7 +31,7 @@ Set these environment variables (see `.env.example`):
 | Variable | Purpose |
 | --- | --- |
 | `SITE_URL` | Canonical origin; defaults to https://aarvanlabs.vercel.app |
-| `NEXT_PUBLIC_BOOKING_URL` | Cal.com/Calendly URL; falls back to `/contact`, preserving interest |
+| `NEXT_PUBLIC_BOOKING_URL` | Learning-session booking URL; falls back to `/contact`, preserving interest. Call buttons dial the phone in `content/site.mjs` |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | International digits; absent configuration uses a Contact Aarvan link |
 | `RESEND_API_KEY` | Server-only Resend key |
 | `CONTACT_FROM_EMAIL` | Sender using a verified Resend domain |
@@ -67,7 +67,7 @@ Browser/audit scripts require Microsoft Edge and the local preview running. Unit
 - TODO: Confirm whether the AI automation course includes a certificate.
 - TODO: Confirm the indicative service delivery/support timelines.
 - TODO: Fill the three founder timeline years and review milestones.
-- TODO: Add the founder photo at `images/arivu.jpg`; rebuild to replace the labeled photo slot.
+- Founder photo added at `images/arivu.webp` from the supplied portrait.
 - TODO: Supply the real Fiverr profile URL for the existing tertiary link.
 
 No testimonials or review/rating schema are published. The testimonial renderer stays empty until real approved data is supplied.
@@ -85,3 +85,5 @@ Local checks confirm JSON syntax and FAQ/content agreement. Google eligibility i
 - Desktop motion controls and mobile JavaScript-disabled page: passed.
 - Local mobile Lighthouse homepage: Performance 96, Accessibility 100, Best Practices 100, SEO 100. This is a local audit of the homepage, not a guarantee for every deployed page.
 - Pending: deployment, real configured email delivery, and public structured-data testing.
+
+Direct call buttons now use `tel:+918122167396`, with the number also visible in the footer. Service enquiry links continue to pre-select the relevant offering.

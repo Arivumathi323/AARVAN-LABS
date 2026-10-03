@@ -12,7 +12,7 @@ const desktop=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a
 await page.getByRole('navigation',{name:'Main navigation'}).getByText('Services',{exact:true}).click();
 await page.getByRole('link',{name:'WhatsApp Automation',exact:true}).first().click();
 assert.ok(page.url().endsWith('/services/whatsapp-automation'));
-await page.getByRole('main').getByRole('link',{name:'Book a Free Call',exact:true}).first().click();
+await page.getByRole('main').getByRole('link',{name:'Send an enquiry',exact:true}).click();
 assert.equal(await page.getByLabel("I'm interested in").inputValue(),'whatsapp-automation');
 await page.getByLabel('Name',{exact:true}).fill('Local Test');await page.getByLabel('Email',{exact:true}).fill('test@example.com');await page.getByLabel('Phone / WhatsApp').fill('+919876543210');await page.getByLabel('Message',{exact:true}).fill('A local preview form check.');
 await page.getByRole('button',{name:'Send Message'}).click();await page.getByRole('status').filter({hasText:'Email delivery is not configured'}).waitFor();
