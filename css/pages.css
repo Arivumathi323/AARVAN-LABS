@@ -1,0 +1,46 @@
+﻿:root { --gray: #aaa; }
+.button-primary,.submit-button { color:#111; }
+.hero h1 {font-size:clamp(2.6rem,4.6vw,4.5rem);line-height:1.07;letter-spacing:-.055em;}
+.hero-subtext {letter-spacing:0;font-size:1rem;}
+.hero .text-link {display:inline-block;margin-top:20px;}
+.nav-links {gap:22px;}
+.nav-group {position:relative;}
+summary {cursor:pointer;}
+summary:focus-visible,select:focus-visible {outline:2px solid var(--orange);outline-offset:5px;}
+.nav-dropdown {position:absolute;top:40px;left:-20px;min-width:280px;padding:14px;background:#111;border:1px solid #493321;border-radius:4px;list-style:none;max-height:70vh;overflow:auto;box-shadow:0 12px 30px #0008;}
+.nav-dropdown a {display:block;padding:8px 10px;font-size:14px;}
+.page-intro {padding:150px 0 64px;position:relative;isolation:isolate;border-bottom:1px solid #282019;}
+.page-intro h1 {font-size:clamp(2.5rem,5.5vw,4.7rem);max-width:950px;}
+.lead {font-size:1.12rem;color:#ccc;max-width:850px;margin-top:28px;}
+.breadcrumbs {color:#aaa;font-size:14px;margin-bottom:36px;display:flex;flex-wrap:wrap;gap:10px;}
+.breadcrumbs a:hover,.related-links a:hover {color:var(--orange);}
+.offering-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.offering-grid .service-card {display:flex;flex-direction:column;}
+.offering-grid p {margin-block:18px;}
+.text-link {color:var(--orange);margin-top:auto;font-weight:600;}
+.learn-band {background:linear-gradient(125deg,#241308,#100d0a 60%);border-block:1px solid #663917;}
+.learn-band .offering-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+.section-lead {text-align:center;color:#bbb;max-width:760px;margin:0 auto 32px;}
+.detail-list {max-width:850px;margin:auto;list-style-position:inside;display:grid;gap:16px;}
+.detail-list li {padding:20px 24px;background:#111;border:1px solid #292929;border-radius:4px;}
+.tool-badges,.cta-band,.related-links {display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+.cta-band {margin-top:32px;}
+.tool-badges .tag {font-size:15px;}
+.related-links a {padding:16px;border:1px solid #444;border-radius:3px;}
+.content-panel {max-width:850px;margin:auto;padding:32px;border:1px solid #333;background:#111;}
+.content-panel p+p {margin-top:20px;}
+.footer-grid {display:grid;grid-template-columns:2fr 2fr 1fr;gap:40px;text-align:left;margin-top:48px;}
+.footer-grid h2 {font-size:1.1rem;margin-bottom:20px;}
+.footer-grid a {display:block;color:#aaa;font-size:14px;margin-bottom:10px;}
+.footer-grid a:hover {color:var(--orange);}
+.site-footer {padding-bottom:100px;}
+.site-footer>.container>p {color:#aaa;max-width:700px;margin:20px auto;}
+select {width:100%;background:#111;border:1px solid #444;border-radius:3px;padding:14px;color:#fff;font:inherit;}
+.honeypot {position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;}
+.floating-contact {position:fixed;bottom:18px;right:18px;z-index:40;background:#111;box-shadow:0 8px 30px #0007;}
+.floating-contact .button {border-color:#9e5520;}
+.photo-slot {display:grid;place-items:center;border:1px dashed #664124;aspect-ratio:1;max-width:440px;color:#bbb;text-align:center;padding:30px;}
+.faq-list summary {min-height:48px;}
+.form-status {color:#ddd;}
+@media(max-width:1000px){.nav-links{gap:14px}.nav .button{padding:10px;font-size:12px}.offering-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:768px){.nav-dropdown{position:static;min-width:0;margin-top:10px;max-height:none}.nav-links{max-height:calc(100svh - 76px);overflow:auto}.nav-group summary{padding:12px}.offering-grid,.learn-band .offering-grid,.footer-grid{grid-template-columns:1fr}.page-intro{padding-top:120px}.hero h1{font-size:clamp(2.5rem,9vw,4rem)}.nav .button{font-size:14px}.floating-contact .button{min-height:44px;padding:8px 12px}.nav-links .nav-contact{padding:10px}.detail-list li{padding:18px}.breadcrumbs{font-size:13px}html:not(.js-enabled) .site-header{position:relative}html:not(.js-enabled) .nav{height:auto;align-items:flex-start;padding-block:20px;flex-wrap:wrap}html:not(.js-enabled) .nav-links{flex-wrap:wrap;overflow:visible;max-height:none}html:not(.js-enabled) .hero,html:not(.js-enabled) .page-intro{padding-top:48px}}

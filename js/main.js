@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.classList.add('js-enabled');
@@ -39,9 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (image.complete && !image.naturalWidth) fallback();
   });
 
-  document.getElementById('fiverr-link').addEventListener('click', (event) => {
+  document.getElementById('fiverr-link')?.addEventListener('click', (event) => {
     if (event.currentTarget.getAttribute('href') !== '#') return;
     event.preventDefault();
     document.getElementById('fiverr-status').textContent = 'Our Fiverr link is coming soon. Connect with us using the social links below.';
   });
 });
+
