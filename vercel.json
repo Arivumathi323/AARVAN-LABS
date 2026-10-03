@@ -1,1 +1,12 @@
-﻿{"buildCommand":"npm run build","outputDirectory":"dist","cleanUrls":true,"redirects":[{"source":"/about.html","destination":"/about","permanent":true}]}
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    }
+  ]
+}
