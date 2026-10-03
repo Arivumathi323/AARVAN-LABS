@@ -1,10 +1,10 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initializeMotion() {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const motionButton = document.getElementById('motion-toggle');
   const video = document.querySelector('.hero-video');
-  let paused = reducedMotion.matches;
+  let paused = reducedMotion.matches || window.matchMedia('(max-width: 768px)').matches;
   let context;
 
   function updateMotion() {
@@ -40,4 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
   video.addEventListener('error', () => { video.hidden = true; });
   updateMotion();
   animate();
-});
+}
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded",initializeMotion); else initializeMotion();
+

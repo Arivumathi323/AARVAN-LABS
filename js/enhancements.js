@@ -1,6 +1,6 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initializeMotion() {
   const hero = document.querySelector('.hero');
   if (!hero) return;
   const root = document.documentElement;
@@ -174,4 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('visibilitychange', syncParticles);
   window.addEventListener('pagehide', () => { clearTimeout(loadingTimer); if (particleFrame) cancelAnimationFrame(particleFrame); resetTilt(); });
   reveal(); syncParticles();
-});
+}
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded",initializeMotion); else initializeMotion();
+

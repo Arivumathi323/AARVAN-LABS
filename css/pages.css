@@ -44,3 +44,6 @@ select {width:100%;background:#111;border:1px solid #444;border-radius:3px;paddi
 .form-status {color:#ddd;}
 @media(max-width:1000px){.nav-links{gap:14px}.nav .button{padding:10px;font-size:12px}.offering-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:768px){.nav-dropdown{position:static;min-width:0;margin-top:10px;max-height:none}.nav-links{max-height:calc(100svh - 76px);overflow:auto}.nav-group summary{padding:12px}.offering-grid,.learn-band .offering-grid,.footer-grid{grid-template-columns:1fr}.page-intro{padding-top:120px}.hero h1{font-size:clamp(2.5rem,9vw,4rem)}.nav .button{font-size:14px}.floating-contact .button{min-height:44px;padding:8px 12px}.nav-links .nav-contact{padding:10px}.detail-list li{padding:18px}.breadcrumbs{font-size:13px}html:not(.js-enabled) .site-header{position:relative}html:not(.js-enabled) .nav{height:auto;align-items:flex-start;padding-block:20px;flex-wrap:wrap}html:not(.js-enabled) .nav-links{flex-wrap:wrap;overflow:visible;max-height:none}html:not(.js-enabled) .hero,html:not(.js-enabled) .page-intro{padding-top:48px}}
+.hero-bottom { padding-right: 200px; }
+.mascot {border-radius:50%;}
+@media(max-width:768px){.hero-bottom{padding-right:0;bottom:85px}.hero{padding-bottom:155px}}
