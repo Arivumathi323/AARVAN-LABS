@@ -1,0 +1,3 @@
+﻿import {readFile,writeFile} from 'node:fs/promises';
+const routes=JSON.parse(await readFile('dist/routes.json','utf8'));
+await writeFile('SEO-CHECKLIST.md','# Structured-data and page-source checks\n\nAfter deployment, test these URLs in [Google Rich Results Test](https://search.google.com/test/rich-results) and [Schema.org Validator](https://validator.schema.org/). Not every schema type is eligible for a Google rich result.\n\n'+routes.map(r=>'- https://aarvanlabs.vercel.app'+r.path).join('\n')+'\n\nAlso verify `/sitemap.xml`, `/robots.txt`, `/llms.txt`, the canonical origin and one real contact-form delivery. Local schema JSON and static page-source checks have passed; public Google tests require the updated deployment.\n');

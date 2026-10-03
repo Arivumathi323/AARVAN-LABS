@@ -16,3 +16,5 @@ Thumbs.db
 node_modules/
 preview.log
 preview-error.log
+
+artifacts/

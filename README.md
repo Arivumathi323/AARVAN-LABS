@@ -1,53 +1,87 @@
-# Aarvan Labs
+﻿# Aarvan Labs website
 
-A complete responsive static website using semantic HTML, eight stylesheets, and five JavaScript files. No framework or installation is required.
+Static HTML generated with Node.js, preserving the original dark/orange design, fonts, mascot video and animation modules. Vercel serves `dist/` and deploys `api/contact.js` as a serverless function.
 
-## Preview
+## Run locally
 
-Open `index.html` in a browser, or run `node preview.mjs` and visit the printed URL. Stop the server with Ctrl+C.
+```sh
+npm ci
+npm run build
+npm run dev
+```
 
-## Assets
+Open http://127.0.0.1:4173. The preview uses the generated `dist` pages, including clean routes and the contact endpoint. Rebuild after editing; the preview server does not need restarting for HTML/CSS changes.
 
-The original supplied files remain untouched in the parent folder. Its `video.mp4` is copied to `assets/video/mascot-video.mp4`, following the explicit path in the brief (the example tree's `hero-video.mp4` name is not used). Its `aarvan logo.png` is copied to `assets/images/logo.png`.
+## Edit content
 
-The hero accepts `assets/images/mascot.png` when available. Until then, the supplied Aarvan Labs logo appears.
+- `content/site.mjs`: all service/learning descriptions, deliverables, FAQs, schedules, price placeholders, founder timeline and testimonials.
+- `templates/home.html`: preserved home hero, founder and portfolio markup. Its legacy header/form/metadata are ignored by the generator.
+- `build.mjs`: shared layout, service/course templates, home composition, booking/WhatsApp links, metadata, JSON-LD, sitemap, robots and llms generation.
+- `css/pages.css`: additive styles; original component styles remain intact. The build bundles them into `dist/css/site.css`.
+- `api/contact.js`: validated email submission via Resend, using server-only environment variables.
+- `js/contact.js`, `js/pages.js`: submission feedback, pre-selected interest, accessible dropdown behavior and optional existing Vercel Analytics CTA events.
+- Root `index.html`, `about.html`, `sitemap.xml` and `robots.txt` are historical inputs, not the deployed output. Use `npm run build` and `dist/`.
 
-The project cards use five original AI-generated concept illustrations, not actual product photographs or screenshots:
+## Vercel configuration
 
-- `assets/images/projects/thozhan.png`
-- `assets/images/projects/nova.png`
-- `assets/images/projects/vision-os.png`
-- `assets/images/projects/geo-audit.png`
-- `assets/images/projects/konsolv.png`
+Use the Other framework preset. `vercel.json` sets `npm run build`, output `dist`, clean URLs and the legacy About redirect. No SPA catch-all is used.
 
-Four matching service illustrations are stored under `assets/images/services/`: `ai-automation.png`, `web-development.png`, `product-building.png`, and `freelance.png`. All nine use a coordinated charcoal, silver, and orange palette. The card layouts reserve image dimensions, load artwork lazily, and use gentle hover zoom with reduced-motion support. Project images can be replaced with authentic photographs or screenshots at the same paths. Named fallbacks remain available if a project image cannot load.
+Set these environment variables (see `.env.example`):
 
-See `IMAGE-PROMPTS.md` for the image-generation prompts and provenance.
+| Variable | Purpose |
+| --- | --- |
+| `SITE_URL` | Canonical origin; defaults to https://aarvanlabs.vercel.app |
+| `NEXT_PUBLIC_BOOKING_URL` | Cal.com/Calendly URL; falls back to `/contact`, preserving interest |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | International digits; absent configuration uses a Contact Aarvan link |
+| `RESEND_API_KEY` | Server-only Resend key |
+| `CONTACT_FROM_EMAIL` | Sender using a verified Resend domain |
+| `CONTACT_TO_EMAIL` | Inbox receiving enquiries |
 
-## Contact and Fiverr
+The public variables are read at build time: redeploy after changing them. For local environment files use Node's `--env-file` support, for example `node --env-file=.env build.mjs` and `node --env-file=.env preview.mjs`. Never put email keys in client scripts.
 
-The contact form validates locally and displays a truthful demo confirmation. It does not send, transmit, or store messages. Before launch, connect a form service or backend, validate input on the server, apply abuse protection, and show success only after a successful server response. No API secret belongs in browser JavaScript.
+Resend API reference: https://resend.com/docs/api-reference/emails/send-email
 
-Replace `href="#"` on `#fiverr-link` with the real profile URL. Until then, clicking it announces that the link is coming soon. The supplied GitHub, YouTube, LinkedIn, and Instagram URLs are included in both social rows.
+The form only reports success after the provider returns a delivery ID. Missing configuration returns an honest 503 message. Provider errors are safely reported without exposing keys or upstream details. The honeypot rejects automated form filling; it is not a complete anti-abuse service.
 
-## Accessibility and motion
+## Checks
 
-Includes labeled controls, inline validation, keyboard focus states, skip navigation, responsive mobile navigation with Escape handling, and a motion pause control. System reduced-motion preferences disable entrance and floating animation and pause the video. If GSAP or fonts cannot load, the page remains readable with static content and system fonts. Footer gray text is slightly brighter than the brief to improve readability.
+```sh
+npm run build
+npm test
+node scripts/browser-check.mjs
+node scripts/lighthouse-check.mjs
+```
 
-## File structure
+Browser/audit scripts require Microsoft Edge and the local preview running. Unit/integration checks cover all 17 HTML documents, internal references, metadata, image attributes, JSON-LD parsing and form behavior. Email provider success/failure tests are mocked: no test email is sent. Browser checks cover service-to-contact preselection, the unconfigured form state, mocked success, mobile navigation, overflow and axe accessibility.
 
-`index.html`, `css/{main,hero,about,services,projects,contact,responsive}.css`, `js/{main,animations,mascot,contact}.js`, and `assets/` form the website. `preview.mjs` is a development-only static server. `build.mjs` copies the public files into `dist/` for static hosting.
+`artifacts/` contains preview screenshots, accessibility results and a Lighthouse report. Lighthouse scores reflect local conditions and can differ on the deployed site.
 
-Google Fonts supplies Space Grotesk and Inter; GSAP and ScrollTrigger load from cdnjs. The browser needs internet access for those optional resources.
+## Owner TODOs before public launch
 
-## Added motion and search metadata
+- TODO: Set booking URL and international WhatsApp number.
+- TODO: Configure all three email environment variables, verify the sender domain, and make one real delivery check after deploying.
+- TODO: Replace both service price tiers for each of the seven services in `content/site.mjs`.
+- TODO: Set the fee for each of the four learning offerings.
+- TODO: Confirm each offering's session length, total duration, batch/1:1 format and upcoming dates.
+- TODO: Confirm Chennai offline availability and location.
+- TODO: Confirm whether the AI automation course includes a certificate.
+- TODO: Confirm the indicative service delivery/support timelines.
+- TODO: Fill the three founder timeline years and review milestones.
+- TODO: Add the founder photo at `images/arivu.jpg`; rebuild to replace the labeled photo slot.
+- TODO: Supply the real Fiverr profile URL for the existing tertiary link.
 
-`css/enhancements.css` and `js/enhancements.js` add section reveals, staggered cards, counters, SVG circuit pulses, a scroll progress line, hero particles, and mascot interaction without changing the original animation, navigation, mascot, or contact scripts. The hero uses 50 particles on desktop and at most 20 on mobile/coarse-pointer devices. Canvas resolution is capped at 1.5 DPR; animation stops while the tab is hidden or the hero is offscreen. Transforms and opacity drive the reveals; temporary `will-change` hints are removed after transitions.
+No testimonials or review/rating schema are published. The testimonial renderer stays empty until real approved data is supplied.
 
-The existing Pause motion button and system reduced-motion preference also stop the added effects. Counters keep readable final values when motion is disabled or GSAP is unavailable. The mascot tilt is applied to a wrapper so it can coexist with the original floating image animation. Mobile uses idle sway and no cursor-driven tilt.
+## Structured-data verification after deployment
 
-The hero video displays a subtle orange loading dot until playback. Media/source errors, rejected playback and a ten-second loading timeout activate the dark gradient fallback. No JavaScript leaves the gradient underneath the video as a static fallback.
+Local checks confirm JSON syntax and FAQ/content agreement. Google eligibility is not guaranteed; FAQ and Course markup do not automatically produce enhanced search results. Use https://search.google.com/test/rich-results and https://validator.schema.org/ with the URLs listed in `SEO-CHECKLIST.md` after deployment. Replace the origin there if `SITE_URL` changes.
 
-`about.html` contains a third-person company profile. The homepage includes the requested FAQ, Organization and FAQPage JSON-LD, primary metadata, canonical URL, Open Graph and Twitter metadata. `sitemap.xml` lists both pages; `robots.txt` allows crawling. Canonical, schema and social image URLs use the supplied `https://aarvanlabs.vercel.app` domain. Deploy this source there for those absolute URLs to resolve; publishing a private Sites preview does not deploy to Vercel or make it indexable. Metadata and FAQ do not guarantee search ranking or answer-engine citations.
+## Verification result (3 October 2026)
 
-`assets/images/og-image.jpg` is the generated social preview card. Build and preview scripts include the new page and crawl files. Run `node check.mjs` for existing source and form checks, and `node check-enhancements.mjs` for added metadata and runtime-state checks.
+- Build: all 17 requested static routes generated successfully.
+- Automated HTML/link/metadata/schema checks: passed.
+- Email handler checks: passed for validation, honeypot, missing configuration, mocked delivery success and provider failure.
+- Desktop/mobile browser flow and axe checks: passed, with no page JavaScript errors or WCAG A/AA violations reported in the audited pages.
+- Desktop motion controls and mobile JavaScript-disabled page: passed.
+- Local mobile Lighthouse homepage: Performance 96, Accessibility 100, Best Practices 100, SEO 100. This is a local audit of the homepage, not a guarantee for every deployed page.
+- Pending: deployment, real configured email delivery, and public structured-data testing.
