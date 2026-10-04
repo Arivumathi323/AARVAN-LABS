@@ -1,6 +1,6 @@
 ﻿export const company = {
  name: 'Aarvan Labs', phone: '+918122167396', phoneDisplay: '+91 8122167396', founder: 'Arivumathi S', description: 'Aarvan Labs is a Chennai-based AI and automation studio founded by Arivumathi S, operating under Aarvan Technology.',
- socials: ['https://www.arivumathi.in/','https://github.com/Arivumathi323','https://www.linkedin.com/in/arivumathi-s-aarvan-labs/','https://youtube.com/@aarvan_labs','https://www.instagram.com/learn_with_aarvan'],
+ socials: ['https://www.arivumathi.in/','https://github.com/Arivumathi323','https://www.linkedin.com/in/arivumathi-s-aarvan-labs/','https://youtube.com/@aarvan_labs','https://www.instagram.com/aarvan_labs?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=='],
  timeline: [{year:'TODO: Year',milestone:'Started coding on a mobile phone'},{year:'TODO: Year',milestone:'Began B.E. Computer Science studies in Chennai'},{year:'TODO: Year',milestone:'Founded Aarvan Labs'}],
  photo: '/images/arivu.webp',
  testimonials: [], // Only add testimonials supplied by real customers with permission.
