@@ -92,9 +92,9 @@ function initializeMotion() {
   // Tilt the wrapper so the existing image float keeps its own transform.
   const tilt = hero.querySelector('.mascot-tilt');
   let tiltFrame = 0, targetTilt = 0;
-  const resetTilt = () => { if (tiltFrame) cancelAnimationFrame(tiltFrame); tiltFrame = 0; tilt.style.removeProperty('--mascot-tilt'); hero.classList.remove('is-tilting'); };
+  const resetTilt = () => { if (!tilt) return; if (tiltFrame) cancelAnimationFrame(tiltFrame); tiltFrame = 0; tilt.style.removeProperty('--mascot-tilt'); hero.classList.remove('is-tilting'); };
   hero.addEventListener('pointermove', (event) => {
-    if (mobile.matches || isPaused() || event.pointerType !== 'mouse') return;
+    if (!tilt || mobile.matches || isPaused() || event.pointerType !== 'mouse') return;
     const bounds = hero.getBoundingClientRect();
     targetTilt = Math.max(-8, Math.min(8, ((event.clientX - bounds.left) / bounds.width - .5) * 16));
     hero.classList.add('is-tilting');
